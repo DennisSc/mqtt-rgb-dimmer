@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "platformio", "platformio.vcxproj", "{0FA9C3A8-452B-41EF-A418-9102B170F49F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		OTA|x86 = OTA|x86
+		OTA-FS|x86 = OTA-FS|x86
+		Release|x86 = Release|x86
+		SerialUpload|x86 = SerialUpload|x86
+		SerialUploadFS|x86 = SerialUploadFS|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0FA9C3A8-452B-41EF-A418-9102B170F49F}.Debug|x86.ActiveCfg = Debug|Win32
+		{0FA9C3A8-452B-41EF-A418-9102B170F49F}.Debug|x86.Build.0 = Debug|Win32
+		{0FA9C3A8-452B-41EF-A418-9102B170F49F}.OTA|x86.ActiveCfg = OTA|Win32
+		{0FA9C3A8-452B-41EF-A418-9102B170F49F}.OTA|x86.Build.0 = OTA|Win32
+		{0FA9C3A8-452B-41EF-A418-9102B170F49F}.OTA-FS|x86.ActiveCfg = OTA-FS|Win32
+		{0FA9C3A8-452B-41EF-A418-9102B170F49F}.OTA-FS|x86.Build.0 = OTA-FS|Win32
+		{0FA9C3A8-452B-41EF-A418-9102B170F49F}.Release|x86.ActiveCfg = Release|Win32
+		{0FA9C3A8-452B-41EF-A418-9102B170F49F}.Release|x86.Build.0 = Release|Win32
+		{0FA9C3A8-452B-41EF-A418-9102B170F49F}.SerialUpload|x86.ActiveCfg = SerialUpload|Win32
+		{0FA9C3A8-452B-41EF-A418-9102B170F49F}.SerialUpload|x86.Build.0 = SerialUpload|Win32
+		{0FA9C3A8-452B-41EF-A418-9102B170F49F}.SerialUploadFS|x86.ActiveCfg = SerialUploadFS|Win32
+		{0FA9C3A8-452B-41EF-A418-9102B170F49F}.SerialUploadFS|x86.Build.0 = SerialUploadFS|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
