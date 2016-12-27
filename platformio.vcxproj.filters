@@ -30,6 +30,9 @@
     <None Include="src\dimmer.ino">
       <Filter>Source Files</Filter>
     </None>
+    <None Include="src\buttonpoller.ino">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\defaults.h">

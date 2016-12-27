@@ -130,6 +130,7 @@
   </ImportGroup>
   <ItemGroup>
     <None Include="platformio.ini" />
+    <None Include="src\buttonpoller.ino" />
     <None Include="src\dimmer.ino" />
     <None Include="src\hardware.ino" />
     <None Include="src\main.ino" />

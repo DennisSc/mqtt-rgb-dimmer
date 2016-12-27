@@ -6,7 +6,8 @@
 WiFiClient espClient;
 PubSubClient client(espClient);
 
-
+bool ShouldConnectToMQTT = false;
+int TryCounter = 0;
 
 int getRed(String command) {
 	String returnStr;
@@ -123,7 +124,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
 
 void reconnect() {
 	// Loop until we're reconnected
-	while (!client.connected()) {
+	while ((!client.connected()) && (TryCounter < 5)) {
 		Serial.print("Attempting MQTT connection...");
 
 		// Create a random client ID
@@ -154,7 +155,7 @@ void reconnect() {
 			Serial.print("failed, rc=");
 			Serial.print(client.state());
 			Serial.println(" try again in 5 seconds");
-			
+			TryCounter++;
 			// Wait 5 seconds before retrying
 			delay(5000);
 		}
@@ -162,17 +163,30 @@ void reconnect() {
 }
 
 void mqttsetup() {
-	int port = atoi(mqtt_port);
-	client.setServer(mqtt_server, port);
-	client.setCallback(callback);
+	if (mqtt_port != ""){
+		int port = atoi(mqtt_port);
+		if (mqtt_server != "") {
+			ShouldConnectToMQTT = true;
+			client.setServer(mqtt_server, port);
+			client.setCallback(callback);
+		}
+		else {
+		ShouldConnectToMQTT = false;
+		}
+	}
 }
 
 void mqttloop() {
 
-	if (!client.connected()) {
-		reconnect();
+	if (ShouldConnectToMQTT) 
+	{
+		if (TryCounter < 5)
+		{
+			if (!client.connected()) {
+				reconnect();
+			}
+			client.loop();
+		}
 	}
-	client.loop();
-
 
 }

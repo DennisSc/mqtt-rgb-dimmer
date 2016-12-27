@@ -39,6 +39,7 @@ void setup() {
     otasetup();
 	mqttsetup();
 	dimmersetup();
+	buttonpollersetup();
 
 }
 
@@ -48,5 +49,5 @@ void loop() {
     otaloop();
 	mqttloop();
 	dimmerloop();
-
+	buttonpollerloop();
 }

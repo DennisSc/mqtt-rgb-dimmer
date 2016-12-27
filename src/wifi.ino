@@ -74,10 +74,13 @@ void wifisetup()
 				if (json.success()) {
 					Serial.println("\nparsed json");
 
+					
 					strcpy(mqtt_server, json["mqtt_server"]);
+					//Serial.println("read mqtt_server from json: " + mqtt_server);
 					strcpy(mqtt_port, json["mqtt_port"]);
+					//Serial.println("read mqtt_port from json: " + mqtt_port);
 					strcpy(mqtt_topic, json["mqtt_topic"]);
-
+					//Serial.println("read mqtt_topic from json: " + mqtt_topic);
 				}
 				else {
 					Serial.println("failed to load json config");
@@ -181,6 +184,7 @@ void wifisetup()
 		Serial.println("saving config");
 		DynamicJsonBuffer jsonBuffer;
 		JsonObject& json = jsonBuffer.createObject();
+		
 		json["mqtt_server"] = mqtt_server;
 		json["mqtt_port"] = mqtt_port;
 		json["mqtt_topic"] = mqtt_topic;
@@ -196,7 +200,7 @@ void wifisetup()
 		//end save
 	}
 
-	Serial.println("local ip");
+	Serial.print("local IP: ");
 	Serial.println(WiFi.localIP());
 
 
