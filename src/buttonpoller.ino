@@ -43,17 +43,16 @@ void buttonpollerloop()
 
 	if (counter > 5000)
 	{
-		SPIFFS.format();
-		Serial.println("button caused reset - will restore factory defaults");
+		Serial.println("button reset - will restore factory defaults");
 		counter = 0;
 		PressStarted = false;
 		WiFiManager wifiManager;
 		wifiManager.resetSettings();
-		Serial.println("cleared wifi creds");
+		Serial.println("cleared wifi credentials");
 		SPIFFS.format();
-		Serial.println("formatted SPIFFS - rebooting...");
+		Serial.println("formatted SPIFFS"");
 		delay(3000);
-		//reset and try again, or maybe put it to deep sleep
+		Serial.println("Rebooting now...");
 		ESP.reset();
 		delay(5000);
 	}
