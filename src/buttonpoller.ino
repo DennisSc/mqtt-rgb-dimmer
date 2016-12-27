@@ -50,7 +50,7 @@ void buttonpollerloop()
 		wifiManager.resetSettings();
 		Serial.println("cleared wifi credentials");
 		SPIFFS.format();
-		Serial.println("formatted SPIFFS"");
+		Serial.println("formatted SPIFFS");
 		delay(3000);
 		Serial.println("Rebooting now...");
 		ESP.reset();
